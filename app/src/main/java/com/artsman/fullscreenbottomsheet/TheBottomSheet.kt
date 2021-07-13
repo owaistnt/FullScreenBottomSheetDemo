@@ -47,6 +47,17 @@ class BottomSheet : BottomSheetDialogFragment() {
         behavior.peekHeight = getWindowHeight()
         //Set the expanded state
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
+
+        behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback(){
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                if(newState==BottomSheetBehavior.STATE_COLLAPSED){
+                    //dismiss()
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {}
+
+        })
     }
 
 }
